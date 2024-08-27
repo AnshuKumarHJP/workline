@@ -1,0 +1,437 @@
+body {
+    font-family: "Poppins", sans-serif;
+    /* background-color: #f8f7f4 !important; */
+    background-color: whitesmoke !important;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
+
+.accordion-button {
+    display: flex;
+    align-items: center;
+}
+
+.accordion-button::before {
+    content: '-';
+    font-size: 1.8rem;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    text-align: center;
+}
+
+.accordion-button.collapsed::before {
+    content: '+';
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.accordion-button::after {
+    display: none;
+}
+
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+
+
+.EidtIcon {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 99;
+    background-color: #6b6b6b2d;
+    border-radius: 50%;
+    padding: 4px;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.EidtIcon:hover {
+    color: rgb(255, 153, 0);
+    cursor: pointer;
+}
+
+.image-fluid {
+    object-fit: fill;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+    padding: 2px;
+}
+
+.image-container:hover .ProfileEditIcon {
+    display: flex !important;
+    color: white;
+}
+
+.ProfileEditIcon {
+    background-color: rgba(128, 128, 128, 0.277);
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.cutomeCard_body {
+    max-height: 330px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.cutomeCard_body::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+.cutomeCard_body:hover::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
+
+.cutomeCard_body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.cutomeCard_body::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 10px;
+}
+
+.card-hover-show .hidden-text {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.card-hover-show a:hover .hidden-text {
+    display: inline;
+    opacity: 1;
+}
+
+
+.custom-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    margin-bottom: 20px;
+    /* height: 160px !important; */
+    /* width:300px; */
+    cursor: pointer;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.btnSave {
+    background-color: #263E5F;
+    border: 1px solid #263E5F;
+    padding: 6px 18px;
+    text-align: center;
+    border-radius: 6px;
+    color: #fff;
+    flex: 1 0 auto;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.4;
+    width: 100%;
+}
+
+
+
+.RightSideBar {
+    z-index: 9999 !important;
+    width: 100% !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+/* new menu css start  */
+.sectionMenu_Dashboard {
+    padding: 0px !important;
+    margin: 0px !important;
+    height: 100dvh !important;
+    width: 100dvw;
+    background-color: green;
+    overflow-y: scroll;
+}
+
+.MenuList {
+    width: 235px;
+    background-color: whitesmoke;
+    overflow-y: auto;
+    padding-bottom: 10px;
+    position: fixed;
+    height: 100%;
+    /* display: none; */
+}
+.isSidebarCollapes{
+    width: 60px;
+}
+.modelDiv {
+    position: absolute;
+    margin-left: 235px;
+    padding: 0px 0px;
+    min-height: 100vh;
+    background-color: white;
+    width: calc(98vw - 210px);
+    transition: margin-left 0.5s ease, width 0.5s ease;
+    /* display: none; */
+}
+
+.AfCollapesmodelDiv {
+    margin-left: 60px !important;
+    width: calc(98vw - 30px);
+}
+
+.ListCss p.hidden {
+    display: none;
+}
+
+.MenuList::-webkit-scrollbar {
+    display: none;
+}
+
+.MenuList ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.ListCss {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 0px;
+    padding: 10px 15px;
+}
+
+.ListCss.active {
+    background-color: white !important;
+    border-radius: 30px 0px 0px 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.ListCss:hover {
+    background-color: white;
+}
+
+.ListCss p {
+    text-decoration: none;
+    color: #263E5F;
+    display: block;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin: 0px;
+}
+
+.ListCss i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.ListCss b {
+    margin-left: 4px;
+}
+
+.ListCss span {
+    margin-left: 4px;
+}
+
+
+@media (max-width: 768px) {
+    .MenuList {
+        width: 60px;
+        max-height: 100vh;
+    }
+
+    .modelDiv {
+        margin-left: 60px;
+        width: calc(100% - 60px);
+    }
+
+    .ListCss p {
+        display: none;
+    }
+
+    .modelHeading {
+        width: 91dvw !important;
+    }
+
+}
+
+
+@media (max-width: 495px) {
+    .backbtn1 {
+        width: 100px !important;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 413px) {
+    .backbtn1 {
+        width: 110px !important;
+        margin-right: 30px;
+    }
+}
+
+@media (max-width: 322px) {
+    .backbtn1 {
+        width: 130px !important;
+        margin-right: 30px;
+    }
+}
+
+.toggleMenu {
+    cursor: pointer;
+    font-size: 15px;
+    width: fit-content;
+}
+
+.modelHeading {
+    width: calc(100% - 335px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 41px;
+    background-color: white;
+    z-index: 999;
+    position: fixed;
+    padding: 10px;
+}
+
+.backbtn1 {
+    display: flex;
+    cursor: pointer;
+    padding: 3px 10px;
+    /* border: 1px solid gray; */
+    border-radius: 10px;
+    width: 90px;
+    align-items: center;
+    text-align: center;
+}
+
+.modelHeadingToggle {
+    width: calc(100% - 60px);
+}
+
+.form_section {
+    padding: 20px;
+    padding-top: 50px;
+}
+
+.form_section_h {
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 5px;
+}
+
+.form_section .form_section_h em {
+    border-radius: 50%;
+    background-color: #eee;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form_section .form_section_h b {
+    width: calc(100% - 40px);
+    color: #263E5F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.input-rt-button b {
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 1.4;
+    padding: 3px 6px;
+    background-color: #45BBC8;
+    color: #fff;
+    margin-top: 5px;
+    border-radius: 3px;
+}
+
+.form-check-border {
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 0 10px 5px;
+}
+
+
+@media (max-width: 768px) {
+    .toggleMenu {
+        display: none;
+    }
+}
+
+/* from section end */
+
+
+/*uploa image start*/
+
+#display_image_div,
+#cropped_image_result {
+    width: 280px;
+    height: 280px;
+    overflow: hidden;
+    margin: auto;
+    border: 2px solid #052c65;
+    border-radius: 10px;
+}
+
+#cropped_image_result img {
+    height: 100%;
+    width: 100%;
+}
+
+/*uploa image end*/

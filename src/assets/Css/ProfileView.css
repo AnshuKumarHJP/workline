@@ -1,0 +1,334 @@
+.pcss3t > input {
+  position: absolute;
+  left: -9999px;
+}
+
+.pcss3t > label {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.1s;
+  -o-transition: all 0.1s;
+  -ms-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+}
+
+.pcss3t > label > i {
+  display: block;
+  margin: 0px 0px 140px 0px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-size: 20px !important;
+}
+
+.pcss3t > input:checked + label {
+  cursor: default;
+}
+
+.pcss3t > ul {
+  list-style: none;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-size: 13px;
+}
+
+.pcss3t > ul > li {
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  padding: 30px 40px 40px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  opacity: 0;
+  transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.pcss3t > .tab-content-1:checked ~ ul .tab-content-1,
+.pcss3t > .tab-content-2:checked ~ ul .tab-content-2,
+.pcss3t > .tab-content-3:checked ~ ul .tab-content-3,
+.pcss3t > .tab-content-4:checked ~ ul .tab-content-4,
+.pcss3t > .tab-content-5:checked ~ ul .tab-content-5,
+.pcss3t > .tab-content-6:checked ~ ul .tab-content-6,
+.pcss3t > .tab-content-7:checked ~ ul .tab-content-7,
+.pcss3t > .tab-content-8:checked ~ ul .tab-content-8,
+.pcss3t > .tab-content-9:checked ~ ul .tab-content-9 {
+  z-index: 1;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  -webkit-transform: scale(1, 1);
+  -webkit-transform: rotate(0deg);
+}
+
+.pcss3t-effect-scale > ul > li {
+  -webkit-transform: scale(0.1, 0.1);
+}
+
+.pcss3t-effect-rotate > ul > li {
+  -webkit-transform: rotate(180deg);
+}
+
+@media screen and (max-width: 767px) {
+  .pcss3t > label {
+    display: block;
+  }
+
+  .pcss3t > .right {
+    float: none;
+  }
+}
+
+.pcss3t > label {
+  padding: 0 20px;
+  font-size: 13px;
+  line-height: 49px;
+}
+
+.pcss3t-theme-1 > label {
+  margin: 0 5px 5px 0;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+  color: black;
+  opacity: 0.8;
+}
+
+.pcss3t-theme-1 > input:checked + label {
+  margin-bottom: 0;
+  padding-bottom: 5px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  color: green;
+  opacity: 1;
+  background: whitesmoke;
+}
+
+.pcss3t > ul,
+.pcss3t > ul > li {
+  height: 89dvh;
+  background-color: whitesmoke;
+}
+
+.card ul {
+  padding: 5px;
+  margin: 0;
+  list-style: none;
+}
+
+.card li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-bottom: 0px;
+  word-wrap: break-word;
+}
+
+.card li em {
+  padding: 0 15px 0 0;
+  line-height: 10px;
+  font-size: 14px;
+  color: #6b6b6b;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.card li span {
+  display: block;
+  padding: 0 15px 0 0;
+  font-size: 13px;
+  color: #484848;
+  font-weight: 400;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.eidtIcon {
+  background-color: #6b6b6b2d;
+  border-radius: 50%;
+  padding: 2px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  align-items: center;
+  font-size: 13px;
+}
+
+.eidtIcon:hover {
+  color: rgb(255, 153, 0);
+  cursor: pointer;
+}
+
+.card-footer {
+  background-color: white;
+  border: none;
+}
+
+.view-TabDataDiv {
+  margin-top: 110px;
+}
+
+.levelDiv {
+  border-radius: 5px;
+  color: white;
+  margin: 2px 5px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 3px 8px;
+  vertical-align: top;
+}
+
+.btnFixed {
+  position: fixed;
+  height: 50px;
+  top: 0px;
+  right: 0;
+  background-color: transparent;
+  z-index: 99;
+  padding: 10px;
+}
+
+.backbtn {
+  cursor: pointer;
+  padding: 3px 10px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.timeline_area {
+  position: relative;
+  z-index: 1;
+}
+
+.single-timeline-area {
+  position: relative;
+  z-index: 1;
+  padding-left: 180px;
+}
+
+@media only screen and (max-width: 575px) {
+  .single-timeline-area {
+    padding-left: 100px;
+  }
+}
+
+.single-timeline-area .timeline-date {
+  position: absolute;
+  width: 180px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding-right: 60px;
+}
+
+@media only screen and (max-width: 575px) {
+  .single-timeline-area .timeline-date {
+    width: 100px;
+  }
+}
+
+.single-timeline-area .timeline-date::after {
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  content: "";
+  background-color: #ebebeb;
+  top: 0;
+  right: 30px;
+  z-index: 1;
+}
+
+.single-timeline-area .timeline-date::before {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: #f1c40f;
+  content: "";
+  top: 50%;
+  right: 26px;
+  z-index: 5;
+  margin-top: -5.5px;
+}
+
+.single-timeline-area .single-timeline-content {
+  position: relative;
+  z-index: 1;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  -webkit-box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.125);
+  box-shadow: 0 0.25rem 1rem 0 rgba(47, 91, 234, 0.125);
+  border: 1px solid #ebebeb;
+  width: fit-content;
+}
+/* ************************************ */
+
+.section-Header{
+    background-color:white;
+    position: fixed;
+    width: 97%;
+    z-index: 9999;
+}
+
+.section-Name {
+  padding: 15px 10px !important;
+  cursor: pointer;
+  transition: all 0.1s;
+  border-radius: 5px;
+  margin:  5px 5px;
+  background: #fff;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+  color: black;
+  opacity: 0.8;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  font-size: 14px;
+}
+
+.content{
+    width: 100%;
+    overflow: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: all 1s;
+    opacity: 1;
+}
+
+.content-active{
+    opacity: 0.1;
+    }

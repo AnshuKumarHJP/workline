@@ -6,9 +6,9 @@ import { store } from './Redux/store/store.js';
 import { BrowserRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')).render(
-  // <BrowserRouter>
+  <BrowserRouter>
     <Provider store={store}>
         <App />
     </Provider>
-  // </BrowserRouter>
+   </BrowserRouter>
 )
