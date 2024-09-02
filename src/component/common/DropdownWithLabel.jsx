@@ -1,19 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const DropdownWithLabel = ({lable}) => {
+const DropdownWithLabel = ({ lable, dataList, placeholders, Set_selectedData,Get_selectedData }) => {
+  const [dropdownData, setDropdownData] = useState(null);
+  const [selectedValue, setSelectedValue] = useState("");
+
+  // set data to dropdown
+  useEffect(() => {
+    if (dataList) {
+      setDropdownData(dataList);
+    }
+  }, [dataList]);
+
+
+   // set selected data to dropdown in edit mode 
+  useEffect(() => {
+    if (Set_selectedData) {
+      setSelectedValue(Set_selectedData);
+    }
+  }, [Set_selectedData]);
+
+
+  const handleSelectChange = (event) => {
+    setSelectedValue(event.target.value);
+    Get_selectedData(event.target.value);
+  };
+
   return (
     <>
-      <div class="form-floating mb-3">
+      <div className="form-floating mb-3">
         <select
-          class="form-select"
+          value={selectedValue}
+          onChange={handleSelectChange}
+          className="form-select"
           aria-label="Floating label select example"
         >
-          <option selected>select</option>
-          <option value="3">Three</option>
+          <option value="">{placeholders}</option>
+          {dropdownData?.map((item, i) => (
+            <option key={i} value={item.value}>
+              {item.label}
+            </option>
+          ))}
         </select>
-        <label for="floatingSelect">
+        <label htmlFor="floatingSelect">
           {lable}
-           <span class="text-danger">*</span>
+          <span className="text-danger"> *</span>
         </label>
       </div>
     </>

@@ -18,7 +18,7 @@ const Offcanvas_Comp = ({ children }) => {
             data-bs-dismiss="offcanvas"
              aria-label="Close"
             style={{
-              position: "absolute",
+              position: "fixed",
               right: "20px",
               top: "10px",
               zIndex: 99,
