@@ -191,7 +191,7 @@ body {
 }
 
 .MenuList {
-    width: 235px;
+    width: 260px;
     background-color: whitesmoke;
     overflow-y: auto;
     padding-bottom: 10px;
@@ -204,11 +204,11 @@ body {
 }
 .modelDiv {
     position: absolute;
-    margin-left: 235px;
+    margin-left: 260px;
     padding: 0px 0px;
     min-height: 100vh;
     background-color: white;
-    width: calc(98vw - 210px);
+    width: calc(98vw - 250px);
     transition: margin-left 0.5s ease, width 0.5s ease;
     /* display: none; */
 }
@@ -237,6 +237,7 @@ body {
 
 .ListCss {
     display: flex;
+    justify-content: space-between;
     gap: 10px;
     align-items: center;
     cursor: pointer;
@@ -263,6 +264,7 @@ body {
     align-items: center;
     column-gap: 10px;
     margin: 0px;
+    word-wrap:unset;
 }
 
 .ListCss i {
@@ -271,10 +273,6 @@ body {
 }
 
 .ListCss b {
-    margin-left: 4px;
-}
-
-.ListCss span {
     margin-left: 4px;
 }
 
@@ -293,7 +291,9 @@ body {
     .ListCss p {
         display: none;
     }
-
+    .statusIcon{
+        display: none;
+    }
     .modelHeading {
         width: 91dvw !important;
     }

@@ -9,7 +9,6 @@ import {
   FaCcVisa,
   FaHandHoldingMedical,
 } from "react-icons/fa";
-import { TbRosetteDiscountCheckFilled } from "react-icons/tb";
 import { GiSkills, GiThorHammer } from "react-icons/gi";
 import { TiStarburst } from "react-icons/ti";
 import { IoLocation } from "react-icons/io5";
@@ -41,83 +40,105 @@ import VisaDetails_Form from "./Profile_Section_Form/VisaDetails_Form";
 import MediclaimNomination_Form from "./Profile_Section_Form/MediclaimNomination_Form";
 import StatutoryForms_Form from "./Profile_Section_Form/StatutoryForms_Form";
 import TransportationAddress_Form from "./Profile_Section_Form/TransportationAddress_Form";
+import { GoClockFill } from "react-icons/go";
+import { FaCircleCheck } from "react-icons/fa6";
+
 
 const SectionList = [
   {
     name: "Personal Info",
     icon: <FaUser />,
+    status: "pending",
   },
   {
     name: "Upload Photo",
     icon: <FaCamera />,
+    status: "complete",
   },
   {
     name: "Passport",
     icon: <FaPassport />,
+    status: "pending",
   },
   {
     name: "Driving License",
     icon: <FaAddressCard />,
+    status: "pending",
   },
   {
     name: "Medical Data",
     icon: <FaHammer />,
+    status: "complete",
   },
   {
     name: "Core Skills",
     icon: <GiSkills />,
+    status: "complete",
   },
   {
     name: "Reference Check",
     icon: <TiStarburst />,
+    status: "complete",
   },
   {
     name: "Contact Address",
     icon: <IoLocation />,
+    status: "pending",
   },
   {
     name: "Emergency Contact",
     icon: <BsFillTagFill />,
+    status: "complete",
   },
   {
     name: "Family Info",
     icon: <MdFamilyRestroom size={18} />,
+    status: "complete",
   },
   {
     name: "Academic Qualification",
     icon: <HiAcademicCap size={20} />,
+    status: "complete",
   },
   {
     name: "Previous Employment",
     icon: <MdWorkHistory size={18} />,
+    status: "complete",
   },
   {
     name: "Marital Status",
     icon: <FaVenusMars size={18} />,
+    status: "pending",
   },
   {
     name: "Fraudulent Activities / Criminal History",
     icon: <MdSkipPrevious size={30} />,
+    status: "complete",
   },
   {
     name: "Identification Details",
     icon: <FaAward />,
+    status: "complete",
   },
   {
     name: "Visa Details",
     icon: <FaCcVisa />,
+    status: "complete",
   },
   {
     name: "ESIC & Mediclaim Nomination",
     icon: <FaHandHoldingMedical size={20} />,
+    status: "complete",
   },
   {
     name: "Statutory Forms",
     icon: <GiThorHammer size={18} />,
+    status: "complete",
   },
   {
     name: "Transportation Address",
     icon: <MdEmojiTransportation size={20} />,
+    status: "complete",
   },
 ];
 
@@ -133,6 +154,11 @@ const ProfileAdd = () => {
     var paragraphs = document.querySelectorAll(".ListCss p");
     paragraphs.forEach(function (paragraph) {
       paragraph.classList.toggle("hidden");
+    });
+
+    var statusIcon = document.querySelectorAll(".statusIcon");
+    statusIcon.forEach(function (statusIcon) {
+      statusIcon.classList.toggle("d-none");
     });
   };
 
@@ -155,12 +181,17 @@ const ProfileAdd = () => {
                   handleViewSection(item, index);
                 }}
               >
-                {item.icon}
-                <p id="PersonalSection_ID">
-                  {item.name}
-                  <b className="mx-1"> * </b>
-                  <TbRosetteDiscountCheckFilled />
-                </p>
+                <div className="d-flex gap-2">
+                  {item.icon}
+                  <p id="PersonalSection_ID">
+                    {item.name}
+                    <b className="mx-1 text-danger">* </b>
+                  </p>
+                </div>
+                <span className="statusIcon">
+                  {item.status == 'complete' && <FaCircleCheck color="green" size={16} />}
+                  {item.status == 'pending' && <GoClockFill color="#ffc127" size={17} />}
+                </span>
               </li>
             ))}
           </ul>

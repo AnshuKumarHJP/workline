@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const InputWithLabel = ({ lable, type, placeholder, setvalue, getvalue }) => {
+const InputWithLabel = ({ label, type, placeholder, setvalue, getvalue }) => {
   const [inputData, setInputData] = useState("");
 
   useEffect(() => {
@@ -26,8 +26,8 @@ const InputWithLabel = ({ lable, type, placeholder, setvalue, getvalue }) => {
           onChange={handleChange}
         />
         <label>
-          {lable}
-          <span className="text-danger"> *</span>
+          {label}
+          <span className="text-danger">*</span>
         </label>
       </div>
     </>

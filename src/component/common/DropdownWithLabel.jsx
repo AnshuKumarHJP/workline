@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from "react";
 
-const DropdownWithLabel = ({ lable, dataList, placeholders, Set_selectedData,Get_selectedData }) => {
+const DropdownWithLabel = ({
+  label,
+  dataList,
+  placeholders,
+  Set_selectedData,
+  Get_selectedData,
+  valueName,
+  valueLabel,
+}) => {
   const [dropdownData, setDropdownData] = useState(null);
   const [selectedValue, setSelectedValue] = useState("");
 
@@ -11,14 +19,12 @@ const DropdownWithLabel = ({ lable, dataList, placeholders, Set_selectedData,Get
     }
   }, [dataList]);
 
-
-   // set selected data to dropdown in edit mode 
+  // set selected data to dropdown in edit mode
   useEffect(() => {
     if (Set_selectedData) {
       setSelectedValue(Set_selectedData);
     }
   }, [Set_selectedData]);
-
 
   const handleSelectChange = (event) => {
     setSelectedValue(event.target.value);
@@ -35,14 +41,26 @@ const DropdownWithLabel = ({ lable, dataList, placeholders, Set_selectedData,Get
           aria-label="Floating label select example"
         >
           <option value="">{placeholders}</option>
-          {dropdownData?.map((item, i) => (
-            <option key={i} value={item.value}>
-              {item.label}
-            </option>
-          ))}
+          {dropdownData?.map((item, index) =>
+            item.category ? (
+              // Category with sub-options
+              <optgroup key={index} label={item.category}>
+                {item.options?.map((subItem, subIndex) => (
+                  <option key={subIndex} value={subItem[valueName]}>
+                    {subItem[valueLabel]}
+                  </option>
+                ))}
+              </optgroup>
+            ) : (
+              // Simple option without category
+              <option key={index} value={item[valueName]}>
+                {item[valueLabel]}
+              </option>
+            )
+          )}
         </select>
         <label htmlFor="floatingSelect">
-          {lable}
+          {label}
           <span className="text-danger"> *</span>
         </label>
       </div>

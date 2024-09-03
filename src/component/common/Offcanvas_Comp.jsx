@@ -21,7 +21,7 @@ const Offcanvas_Comp = ({ children }) => {
               position: "fixed",
               right: "20px",
               top: "10px",
-              zIndex: 99,
+              zIndex: 99999,
               cursor: "pointer",
               backgroundColor:'white'
             }}

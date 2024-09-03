@@ -66,7 +66,6 @@ const ProfileView = () => {
 
 
   const handleSectionView = (index) => {
-    console.log(index)
     setActive(true);
     setActiveSection(index)
     const timer = setTimeout(() => {
