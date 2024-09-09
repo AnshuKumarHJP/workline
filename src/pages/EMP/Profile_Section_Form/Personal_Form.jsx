@@ -9,30 +9,30 @@ const Personal_Form = () => {
   const [otherMobileNumber, setotherMobileNumber] = useState(true);
 
   const [formDate, setFormData] = useState({
-    tittle: "Mr",
-    firstname: "Anshu",
-    middlename: "kunmar",
-    lastname: "tanti",
-    fathername: "AK",
-    mothername: "RK",
-    knowas: "Syco",
-    HighQualification: "161",
-    Gender: "1",
-    Email: "anshu@gmail.com",
-    R_MobileNo: "8210500193",
-    O_MobileNo: "8210500192",
-    DOB: "1999-04-03",
-    BirthDay_Wishday: "1999-04-03",
-    countryOfBirth: "1",
-    DomicileState: "1",
-    placeOfBirth: "PTN",
-    District: "bihar",
-    CurrentNationality: "1",
-    MotherTongue: "52",
+    tittle: "",
+    firstname: "",
+    middlename: "",
+    lastname: "",
+    fathername: "",
+    mothername: "",
+    knowas: "",
+    HighQualification: "",
+    Gender: "",
+    Email: "",
+    R_MobileNo: "",
+    O_MobileNo: "",
+    DOB: "",
+    BirthDay_Wishday: "",
+    countryOfBirth: "",
+    DomicileState: "",
+    placeOfBirth: "",
+    District: "",
+    CurrentNationality: "",
+    MotherTongue: "",
     Other_MotherTongue: "",
-    Religion: "3",
+    Religion: "",
     Other_Religion: "",
-    Caste: "3",
+    Caste: "",
     Other_Caste: "",
     SpeciallyAbled: false,
     SpeciallyAbled_Remarks: "",
@@ -57,7 +57,7 @@ const Personal_Form = () => {
           <div className="col-md-4">
             <DropdownWithLabel
               label="Tittle"
-              placeholders="Select"
+              placeholders="-- Select --"
               dataList={ArrayDummyData?.Tittle}
               valueName="SalutationCode"
               valueLabel="SalutationName"
@@ -136,7 +136,7 @@ const Personal_Form = () => {
           <div className="col-md-4">
             <DropdownWithLabel
               label="Highest Qualification"
-              placeholders="Select"
+              placeholders="-- Select --"
               dataList={ArrayDummyData?.QualificationOptions}
               valueName="qualificationCode"
               valueLabel="qualificationName"
@@ -156,7 +156,7 @@ const Personal_Form = () => {
         <div className="col-md-6">
           <DropdownWithLabel
             label="Gender"
-            placeholders="Select"
+            placeholders="-- Select --"
             dataList={ArrayDummyData?.GenderData}
             valueName="GenderCode"
             valueLabel="GenderName"
@@ -258,7 +258,7 @@ const Personal_Form = () => {
         <div className="col-md-4">
           <DropdownWithLabel
             label="Country Of Birth"
-            placeholders="Select"
+            placeholders="-- Select --"
             dataList={ArrayDummyData?.CountryData}
             valueName="CountryCode"
             valueLabel="CountryName"
@@ -271,7 +271,7 @@ const Personal_Form = () => {
         <div className="col-md-4">
           <DropdownWithLabel
             label="Domicile State"
-            placeholders="Select"
+            placeholders="-- Select --"
             dataList={
               formDate.countryOfBirth == 1 ? ArrayDummyData?.StateData : []
             }
@@ -308,7 +308,7 @@ const Personal_Form = () => {
         <div className="col-md-4">
           <DropdownWithLabel
             label="Current Nationlity"
-            placeholders="Select"
+            placeholders="-- Select --"
             dataList={ArrayDummyData?.CountryData}
             valueName="CountryCode"
             valueLabel="CountryName"
@@ -328,7 +328,7 @@ const Personal_Form = () => {
         <div className="col-md-4">
           <DropdownWithLabel
             label="Mother Tounge"
-            placeholders="Select"
+            placeholders="-- Select --"
             dataList={ArrayDummyData?.MotherTongueData}
             valueName="MothertoungeCode"
             valueLabel="MotherTongueName"
@@ -354,7 +354,7 @@ const Personal_Form = () => {
         <div className="col-md-4">
           <DropdownWithLabel
             label="Religion"
-            placeholders="Select"
+            placeholders="-- Select --"
             dataList={ArrayDummyData?.ReligionData}
             valueName="ReligionCode"
             valueLabel="ReligionName"
@@ -380,7 +380,7 @@ const Personal_Form = () => {
         <div className="col-md-4">
           <DropdownWithLabel
             label="Caste"
-            placeholders="Select"
+            placeholders="-- Select --"
             dataList={ArrayDummyData?.CasteData}
             valueName="CasteCode"
             valueLabel="CasteName"

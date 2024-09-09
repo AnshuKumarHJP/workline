@@ -1,0 +1,15 @@
+.text-start{
+    color: #DB5A8E;
+    font-size: 15px;
+    
+}
+.text-start i{
+    font-size: 23px;
+}
+.text-start span{
+    color:  #468BA0;
+}
+.text-start span span{
+    font-size: 30px;
+    padding: 5px;
+}

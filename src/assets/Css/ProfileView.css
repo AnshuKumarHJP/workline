@@ -299,8 +299,9 @@
 .section-Header{
     background-color:white;
     position: fixed;
-    width: 97%;
+      width: 100%;
     z-index: 9999;
+    padding-bottom: 10px;
 }
 
 .section-Name {

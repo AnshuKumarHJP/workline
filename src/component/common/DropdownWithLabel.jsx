@@ -39,8 +39,9 @@ const DropdownWithLabel = ({
           onChange={handleSelectChange}
           className="form-select"
           aria-label="Floating label select example"
+          placeholder={placeholders}
         >
-          <option value="">{placeholders}</option>
+          <option>{placeholders}</option>
           {dropdownData?.map((item, index) =>
             item.category ? (
               // Category with sub-options

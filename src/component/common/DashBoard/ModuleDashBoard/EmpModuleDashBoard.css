@@ -1,0 +1,32 @@
+.top_section {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: url(../../../../assets/img/WFMbg.jpg) center center no-repeat;
+  background-size: cover;
+  padding: 40px 100px;
+  z-index: 99;
+  text-align: center;
+}
+.top_section:after {
+  content: " "; 
+  background-color: #2d3d5f;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.96;
+  z-index: 9;
+}
+.top_section h3 {
+  color: #fff;
+  z-index: 99;
+  position: relative;
+  font-size: 24px;
+  color: #76ccca;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}

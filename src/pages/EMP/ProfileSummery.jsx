@@ -15,6 +15,7 @@ const ProfileSummery = () => {
 
 
   useEffect(() => {
+    
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2000); 
@@ -43,6 +44,7 @@ const ProfileSummery = () => {
 
       {/* pop up canvas */}
       <Offcanvas_Comp>
+      {/* <Loading /> */}
         {isLoading ? <Loading /> : isAddMode ? <ProfileAdd /> : <ProfileView />}
       </Offcanvas_Comp>
     </>

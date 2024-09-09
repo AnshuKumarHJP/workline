@@ -1,0 +1,156 @@
+::-webkit-scrollbar {
+    display: none;
+}
+ .userpic {
+     width: 50px;
+     height: 100%;
+     border-radius: 50%;
+     border: 2px solid black;
+     cursor: pointer;
+ }
+.navbar-vend img {
+    width: 40%;
+    height: 100%;
+}
+ .myNavbar {
+     width: 100vw;
+     display: flex;
+     justify-content:space-between  ;
+     background-color:#fff;
+     margin-top: -10px;
+     margin-left: -12px;
+     color: #fff;
+     padding-top: 10px;
+     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ }
+
+ .Icon {
+     color: #334667;
+     font-size: 45px;
+     padding: 10px;
+ }
+.btn_toggless{
+    color: #334667;
+    display: block;
+}
+ .MyMenu {
+     /* font-size: 2rem; */
+ }
+ .myLogo img {
+     height: 50px;
+     width: 200px;
+ }
+ .Notification_NO {
+     font-size: 8px;
+     position: absolute;
+     transform: translate(-80%, -10%);
+     font-size: 14px;
+     font-weight: 500;
+     color: white;
+     text-align: center;
+     background-color: #334667;
+     width: 22px;
+     border-radius: 50%;
+ }
+.dropdown-menu{
+    width: 330px;
+    min-width: 280px;
+    border: 1px solid #eee;
+    background-color:whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transform: translate(-80%);
+    height: 350px;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    padding: 0;
+}
+.text{
+    color:#334667;
+    text-align: left;
+    padding-left: 10px;
+}
+.time{
+    margin: 5px;
+}
+.cinout{
+    padding: 1rem;
+}
+.cout{
+    float: right;
+    padding: 1rem;
+}
+.mcio-button{
+    background-color: #334667;
+    color: #fff;
+    height: 60px;
+    padding: 6px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+.active{
+    padding: 10px;
+    /* opacity: 0.5; */
+}
+.dropdown-header{
+    color: white;
+    background-color: #334667;
+}
+.dropdown-footer{
+    color: white;
+    background-color: #334667;
+    bottom: 0;
+    width: 100%;
+    position: sticky;
+    height: 40px;
+    text-decoration: none;
+}
+.notification-text{
+    font-size: 13px;
+    padding-top: 10px 15px;
+    line-height: normal;
+    white-space: normal;
+    display: block;
+    text-align: justify;
+    color: #333;
+}
+.notification-age{
+    float: right;
+    padding-top: 1rem;
+}
+ .profileDetails {
+     width: 100px;
+     border-radius: 50%;
+ }
+ .empintro{
+    padding: 5px;
+ }
+ .empintro:hover{
+    background-color:#334667;
+ }
+ .userProfile{
+    text-align: center;
+ }
+ .user-header{
+    background-color:#334667;
+    padding: 1rem;
+    color: #fff;
+   
+ }
+ .change-role{
+    margin-top: 2px;
+    padding: 2px;
+    color: white;
+    background-color:#334667;
+ }
+ .user-body{
+    background-color: #fff;
+ }
+ .role{
+    font-size: 13px;
+    padding-left: 1rem;
+    line-height: normal;
+    white-space: normal;
+    display: block;
+    text-align: justify;
+    color: #333;
+ }

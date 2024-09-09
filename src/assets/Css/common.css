@@ -257,7 +257,7 @@ body {
 
 .ListCss p {
     text-decoration: none;
-    color: #263E5F;
+    color: black;
     display: block;
     font-size: 14px;
     display: flex;
@@ -300,27 +300,6 @@ body {
 
 }
 
-
-@media (max-width: 495px) {
-    .backbtn1 {
-        width: 100px !important;
-        margin-right: 20px;
-    }
-}
-
-@media (max-width: 413px) {
-    .backbtn1 {
-        width: 110px !important;
-        margin-right: 30px;
-    }
-}
-
-@media (max-width: 322px) {
-    .backbtn1 {
-        width: 130px !important;
-        margin-right: 30px;
-    }
-}
 
 .toggleMenu {
     cursor: pointer;
