@@ -9,7 +9,7 @@
   text-align: center;
 }
 .top_section:after {
-  content: " "; 
+  content: " ";
   background-color: #2d3d5f;
   position: absolute;
   left: 0;
@@ -29,4 +29,90 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0;
+}
+
+/* Custom styles for this tab component */
+.custom-nav-item {
+  border-bottom: 1px solid gainsboro;
+  display: flex; 
+  gap: 5px; 
+  padding: 0px;
+  list-style: none;
+  /* flex-wrap: wrap;  */
+  margin: 0;
+  overflow: scroll;
+}
+
+.custom-nav-link {
+  color: black;
+  text-decoration: none;
+  border-radius: 10px 10px 0px 0px;
+  border: 1px solid transparent !important;
+  margin: 0px !important;
+  padding: 10px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.custom-nav-link.active {
+  border: 1px solid gainsboro !important;
+}
+
+
+.box {
+  position: relative;
+  border-radius: 3px;
+  background: #ffffff;
+  /* border-top: 3px solid #d2d6de; */
+  margin-bottom: 20px;
+  width: 100%;
+  box-shadow: 0 1px 5px 0.05px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.box-header.with-border {
+  border-bottom: 1px solid #f4f4f4;
+}
+.box-header {
+  color: #444;
+  display: block;
+  padding: 10px;
+  position: relative;
+}
+
+.box-body {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  padding: 10px;
+}
+
+.box-header .box-title {
+  display: inline-block;
+  font-size: 18px;
+  margin: 0;
+  line-height: 1;
+}
+
+.detail-functions {
+    font-size: 14px;
+    padding: 12px;
+    background: rgba(220, 220, 220, 0.268);
+    margin-bottom: 5px;
+    color: #444;
+    border-radius: 10px;
+    /* border-bottom: 1px solid gainsboro; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail-functions>a {
+  color: #444;
+  text-decoration: none;
+}
+
+.detail-functions>span {
+  cursor: pointer;
 }

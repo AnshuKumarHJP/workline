@@ -1,0 +1,49 @@
+.contents{
+    padding: 1rem;  
+    border-radius: 20px;
+    color:#076074;
+    width: 600px;
+    background-image: linear-gradient(To right,#bcebf8,#cee0f3);
+}
+.contents li{
+    list-style: none;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    padding: 5px;
+}
+
+.contents li a{
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 10px;
+    color: #333;
+    opacity: 0.7;
+}
+.contents li:hover{
+    -webkit-transform: scale(1.05); /* Scales the li element */
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Adds visible shadow */
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+.favorico{
+    background-image: linear-gradient(To right,#86d8ef,#96b8dc);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 60%;
+    font-size: 12px;
+    color: black;
+}
+
+/* .hvr-bounce-in {
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+} */

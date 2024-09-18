@@ -1,0 +1,57 @@
+/* table.dataTable th,
+table.dataTable td {
+  white-space: nowrap;
+} */
+
+.tr_row th {
+  background-color: rgb(221, 221, 221) !important;
+  border: 2px solid rgb(204, 204, 204) !important;
+  color: rgba(0, 0, 0, 0.668) !important;
+  font-weight: normal;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.tr_row td {
+  background-color: whitesmoke !important;
+  border: 1px solid gainsboro;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.dataTables_filter input {
+  border: none !important;
+  margin-bottom: 5px !important;
+  border-bottom: 2px solid gainsboro !important;
+}
+
+.dataTables_filter label {
+  font-size: 1rem;
+}
+
+.paging_simple_numbers {
+  font-size: 12px;
+  color: black !important;
+}
+.paginate_button {
+  border: none !important;
+  color: black !important;
+}
+.paginate_button:hover {
+  background: #337ab7 !important;
+}
+
+.paginate_button.previous.disabled:hover {
+  cursor: default !important;
+  background: transparent !important;
+}
+
+.paginate_button.current {
+  z-index: 3;
+  cursor: default;
+  background: #337ab7 !important;
+  border-color: #337ab7 !important;
+}
+.paginate_button.next.disabled:hover {
+  cursor: default !important;
+  background: transparent !important;
+}

@@ -1,28 +1,17 @@
-import { Outlet, Navigate } from "react-router-dom";
-import CryptoJS from 'crypto-js';
+import { Outlet, Navigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export default function PrivateRoute() {
-  const encryptedData = localStorage.getItem("userData");
+  const token = localStorage.getItem('token');
 
-  let userData = null;
-  if (encryptedData) {
-    // Decrypt the encrypted data from localStorage
-    try {
-      const bytes = CryptoJS.AES.decrypt(encryptedData, 'secret-key');
-      const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
+  if (!token) {
+    // Use toast.warning in a useEffect to avoid synchronous state updates
+    setTimeout(() => {
+      toast.warning('You are not logged in! Please login.');
+    }, 0);
 
-      // Parse the decrypted JSON string back into a JavaScript object
-      userData = JSON.parse(decryptedData);
-    } catch (error) {
-      console.error("Error decrypting userData:", error);
-    }
-  }
-
-  // If userData is null or invalid, redirect to login page
-  if (!userData) {
     return <Navigate to="/login" />;
   }
 
-  // If userData is valid, render the child routes (i.e., Outlet or children prop)
   return <Outlet />;
 }

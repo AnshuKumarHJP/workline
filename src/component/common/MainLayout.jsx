@@ -1,17 +1,21 @@
-import React, { Children } from 'react'
-import Header from './Header/Header'
-import Footer from './Footer/Footer'
+import React, { Children } from "react";
+import Footer from "./Footer/Footer";
+import { ToastContainer } from "react-toastify";
+import Navbar from "./Header/Navbar";
 
-const MainLayout = ({children}) => {
+const MainLayout = ({ children }) => {
+  const Jwt = localStorage.getItem("token");
+
   return (
     <>
-    <Header/>
-    <div style={{minHeight:'80dvh'}}>
-      {children}
-    </div>
-    <Footer/>
+    <ToastContainer />
+      <div className="p-0 m-0">
+        <Navbar/>
+        <div style={{ minHeight: "80dvh" }}>{children}</div>
+        {Jwt && <Footer />}
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;

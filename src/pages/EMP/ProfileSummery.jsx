@@ -7,7 +7,7 @@ import { ProfileCard } from "../../component/Emp_Component/ProfileCard";
 import Offcanvas_Comp from "../../component/common/Offcanvas_Comp";
 import ProfileAdd from "./ProfileAdd";
 import ProfileView from "./ProfileView";
-import Loading from "../../component/common/Loading";
+import Loading from "../../component/common/Loading/Loading";
 
 const ProfileSummery = () => {
   const [isLoading, setIsLoading] = useState(true);

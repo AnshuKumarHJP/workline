@@ -1,0 +1,22 @@
+.MuiDataGrid-row {
+  background-color: #e0e0e057 !important;
+  font-size: 13px !important;
+}
+.MuiDataGrid-row:hover {
+  background-color: #e0e0e0b7 !important;
+}
+
+.css-4k60b2-MuiDataGrid-root .MuiDataGrid-withBorderColor {
+  border-color: rgba(224, 224, 224, 1);
+  background: #337ab7;
+  padding: 5px !important;
+}
+
+.css-8iab9z-MuiButtonBase-root-MuiButton-root {
+  color: black !important;
+}
+
+.MuiDataGrid-root {
+  border: none !important;
+}
+

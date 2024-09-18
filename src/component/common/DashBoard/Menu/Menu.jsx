@@ -1,4 +1,4 @@
-import "./EmpMenu.css";
+import "./Menu.css";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { IoBagHandle } from "react-icons/io5";
 import { FaFilter } from "react-icons/fa";
@@ -16,52 +16,52 @@ import { useRef, useState } from "react";
 
 const menuData = [
   {
-    tittle: "Workforce Management",
+    tittle:(<>Workforce<br/>Management</>),
     icon: <IoBagHandle />,
     path: "./wfm",
   },
   {
-    tittle: "Workforce Management",
+    tittle: (<>Talent<br/>Acquisition</>),
     icon: <FaFilter />,
     path: "/",
   },
   {
-    tittle: "Workforce Management",
+    tittle:(<>Attendance <br /> & Timeoff</>),
     icon: <FaClock />,
     path: "/",
   },
   {
-    tittle: "Workforce Management",
+    tittle: (<>Compensation<br/>& Benefits</>),
     icon: <FaMoneyBill />,
     path: "/",
   },
   {
-    tittle: "Workforce Management",
+    tittle: (<>Performance<br/>& Goals</>),
     icon: <IoIosColorPalette />,
     path: "/",
   },
   {
-    tittle: "Workforce Management",
+    tittle: (<>Learning<br/>& Development</>),
     icon: <GiSkills />,
     path: "/",
   },
   {
-    tittle: "Workforce Management",
+    tittle: (<>Travel<br/>Management</>),
     icon: <IoAirplaneSharp />,
     path: "/",
   },
   {
-    tittle: "Workforce Management",
+    tittle: (<>Expenses<br/>Management</>),
     icon: <FaCalculator />,
     path: "/",
   },
   {
-    tittle: "Workforce Management",
+    tittle: (<>Workforce<br/>Engagement</>),
     icon: <FaHandshakeAngle />,
     path: "/",
   },
   {
-    tittle: "Workforce Management",
+    tittle: (<>Business<br/>Process</>),
     icon: <IoBagHandle />,
     path: "/",
   },
@@ -73,7 +73,7 @@ const responsive = {
   420: { items: 2.3 },
   620: { items: 3.5 },
   1024: { items: 5 },
-  1440: { items: 7 },
+  1440: { items: 7.8 },
 };
 
 const items =
@@ -87,7 +87,7 @@ const items =
     </Link>
   ));
 
-const EmpMenu = () => {
+const Menu = () => {
   const carouselRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -152,4 +152,4 @@ const EmpMenu = () => {
   );
 };
 
-export default EmpMenu;
+export default Menu;
