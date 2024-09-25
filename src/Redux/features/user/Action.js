@@ -34,8 +34,8 @@ export const login = (userData,navigate) => async (dispatch) => {
         toast.success(userD.message)
         dispatch(loginSuccess(userD))
         setTimeout(() => {
-            navigate("/");
-          }, 1000);
+            navigate("/home");
+        }, 1000);
     } catch (error) {
         toast.error(error.response.data.message)
         dispatch(loginFailure(error.response.data.message));
@@ -47,7 +47,7 @@ const getuserRequest = () => ({ type: GET_USER_REQUEST })
 const getuserSuccess = (user) => ({ type: GET_USER_SUCCESS, payload: user })
 const getuserFailure = (error) => ({ type: GET_USER_FAILURE, payload: error })
 
-export const getcurrentUserProfile = () => async (dispatch) => {
+export const getcurrentUserProfile = (naviagte) => async (dispatch) => {
     dispatch(getuserRequest());
     try {
         const res = await axios.get('/api/auth/currentUserProfile');
@@ -56,6 +56,8 @@ export const getcurrentUserProfile = () => async (dispatch) => {
     } catch (error) {
         console.log(error)
         if (error.response && error.response.status === 401) {
+           // alert(error.response.data.error)
+          // naviagte('/session-out')
             dispatch(getuserFailure("Session expired. Please log in again."));
         } else {
             dispatch(getuserFailure(error.message));

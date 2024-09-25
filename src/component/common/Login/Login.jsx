@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.css";
 import Login_image from "../../../assets/img/undraw_remotely_2j6y.svg";
 import InputWithLabel from "../InputWithLabel";
@@ -10,13 +10,30 @@ import { useDispatch } from "react-redux";
 import { login } from "../../../Redux/features/user/Action";
 import { toast, ToastContainer } from "react-toastify";
 import MainLayout from "../MainLayout";
+import { getCookie } from "../../../assets/Common JS/Commonfn";
+
+
+
+
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [buttonDisabled, setButtonDisabled] = useState(false);
+  const tokenCookie = getCookie("token");
+  const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    if (token && !tokenCookie) {
+      toast.warning('Session Expired. Please log in again.');
+      setTimeout(() => {
+        localStorage.removeItem('token');
+      }, 2000);
+    }
+  }, [tokenCookie, token]);
+  
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -25,11 +42,12 @@ const Login = () => {
       return;
     }
     const userData = { username, password };
-    await dispatch(login(userData, navigate));
+    dispatch(login(userData, navigate));
   };
 
   return (
     <>
+    {/* <ToastContainer/> */}
       <MainLayout>
         <div className="container">
           <div className="row justify-content-center">

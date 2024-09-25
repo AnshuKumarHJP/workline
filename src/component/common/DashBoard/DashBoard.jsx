@@ -6,12 +6,14 @@ import Favourites from "../Favourites/Favourites";
 import ExternalLinks from "../External Links/ExternalLinks";
 import { FaHighlighter } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const DashBoard = () => {
 
   const { auth } = useSelector((store) => store);
   const { user, isLoding, error } = auth;
-  const Jwt = localStorage.getItem("token");
+
+
   return (
     <>
       <Menu />
@@ -28,6 +30,9 @@ const DashBoard = () => {
           <br />
           We see that you are in a happy mood... Time to fly
         </h3>
+
+
+        <Link to='/emp/profileView'>DBsddsdsdd</Link>
       </div>
 
 

@@ -148,11 +148,11 @@ const Navbar = () => {
   // get userinformation from redux
   useEffect(() => {
     if (Jwt) {
-      dispatch(getcurrentUserProfile());
-    }
-  }, [Jwt]);
+      dispatch(getcurrentUserProfile(navigate));
+   }
+  }, [dispatch,Jwt]);
 
-  // check session expire and remove the token
+  //check session expire and remove the token
   // useEffect(() => {
   //   if (error) {
   //     toast.error(error);
@@ -182,11 +182,11 @@ const Navbar = () => {
               {user && (
                 <>
                   <span className="">
-                    <Link to="/">
+                    <Link to="/home">
                       <AiFillHome className="Icon" />
                     </Link>
                   </span>
-                  <Link onClick={() => { window.open('/Emp/Locator', '_blank'); }}                  >
+                  <Link onClick={() => { window.open('home/Emp/Locator', '_blank'); }}                  >
                       <BiSearchAlt2 className="Icon" />
                   </Link>
                   <span className="dropdown ">

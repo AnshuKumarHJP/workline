@@ -8,6 +8,7 @@ const Offcanvas_Comp = ({ children }) => {
         className="offcanvas offcanvas-end RightSideBar"
         id="offcanvasRight"
         aria-labelledby="offcanvasRightLabel"
+       // style={{marginTop:70}}
       >
         <div
           className="offcanvas-body p-0"

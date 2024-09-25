@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const InputWithLabel = ({ label, type, placeholder, setvalue, getvalue }) => {
+const InputWithLabel = ({ label, type, placeholder, setvalue, getvalue,required }) => {
   const [inputData, setInputData] = useState("");
 
   useEffect(() => {
@@ -24,6 +24,7 @@ const InputWithLabel = ({ label, type, placeholder, setvalue, getvalue }) => {
           placeholder={placeholder}
           value={inputData}
           onChange={handleChange}
+          required={required}
         />
         <label>
           {label}

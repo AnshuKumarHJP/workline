@@ -28,7 +28,7 @@ export const userReducer = (state = initialState, action) => {
     case LOGIN_REQUEST:
     case GET_USER_REQUEST:
     case GET_ALLUSER_REQUEST:
-      return { ...state, isLoding: true, error: null };
+      return { ...state, isLoding: true, error: null,user:null,AllUser:null };
     case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
       return {

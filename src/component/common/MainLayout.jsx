@@ -11,7 +11,7 @@ const MainLayout = ({ children }) => {
     <ToastContainer />
       <div className="p-0 m-0">
         <Navbar/>
-        <div style={{ minHeight: "80dvh" }}>{children}</div>
+        <div style={{ minHeight: "95dvh" }}>{children}</div>
         {Jwt && <Footer />}
       </div>
     </>

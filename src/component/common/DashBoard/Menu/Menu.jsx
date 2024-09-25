@@ -1,71 +1,14 @@
 import "./Menu.css";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
-import { IoBagHandle } from "react-icons/io5";
-import { FaFilter } from "react-icons/fa";
-import { FaClock } from "react-icons/fa6";
-import { FaMoneyBill } from "react-icons/fa";
-import { IoIosColorPalette } from "react-icons/io";
-import { GiSkills } from "react-icons/gi";
-import { IoAirplaneSharp } from "react-icons/io5";
-import { FaCalculator } from "react-icons/fa6";
-import { FaHandshakeAngle } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
-
 import { useRef, useState } from "react";
-
-const menuData = [
-  {
-    tittle:(<>Workforce<br/>Management</>),
-    icon: <IoBagHandle />,
-    path: "./wfm",
-  },
-  {
-    tittle: (<>Talent<br/>Acquisition</>),
-    icon: <FaFilter />,
-    path: "/",
-  },
-  {
-    tittle:(<>Attendance <br /> & Timeoff</>),
-    icon: <FaClock />,
-    path: "/",
-  },
-  {
-    tittle: (<>Compensation<br/>& Benefits</>),
-    icon: <FaMoneyBill />,
-    path: "/",
-  },
-  {
-    tittle: (<>Performance<br/>& Goals</>),
-    icon: <IoIosColorPalette />,
-    path: "/",
-  },
-  {
-    tittle: (<>Learning<br/>& Development</>),
-    icon: <GiSkills />,
-    path: "/",
-  },
-  {
-    tittle: (<>Travel<br/>Management</>),
-    icon: <IoAirplaneSharp />,
-    path: "/",
-  },
-  {
-    tittle: (<>Expenses<br/>Management</>),
-    icon: <FaCalculator />,
-    path: "/",
-  },
-  {
-    tittle: (<>Workforce<br/>Engagement</>),
-    icon: <FaHandshakeAngle />,
-    path: "/",
-  },
-  {
-    tittle: (<>Business<br/>Process</>),
-    icon: <IoBagHandle />,
-    path: "/",
-  },
-];
+import { Sec_Modules } from "../../../../DB/MenuSetUp";
+import { useSelector } from "react-redux";
+import {
+  decryptAsync,
+  encryptAsync,
+} from "../../../../assets/Common JS/Commonfn";
 
 const responsive = {
   0: { items: 1 },
@@ -76,20 +19,39 @@ const responsive = {
   1440: { items: 7.8 },
 };
 
-const items =
-  menuData &&
-  menuData.map((item, index) => (
-    <Link to={item.path} key={index} className="IconStyle">
-      <div className="IconDivStyle">
-        <p style={{ fontSize: "30px" }}>{item.icon}</p>
-        {item.tittle}
-      </div>
-    </Link>
-  ));
-
 const Menu = () => {
   const carouselRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const navigate = useNavigate();
+  const { auth } = useSelector((store) => store);
+  const { user, isLoding, error } = auth;
+
+
+  const handleNavigate = async (path, code) => {
+    const encryptedCode = await encryptAsync(code, user?.TYPEOFUSER);
+    navigate(path + encryptedCode);
+  };
+
+  const items =
+    Sec_Modules &&
+    Sec_Modules.filter((item) => item.Typeofuser === user?.TYPEOFUSER) // Filter based on user type
+      .sort((a, b) => a.Display_Order - b.Display_Order) // Sort by display_order
+      .map((item, index) => (
+        <div
+          onClick={() => {
+            handleNavigate(item.path, item.Module_Code);
+          }}
+          key={index}
+          className="IconStyle"
+        >
+          <div className="IconDivStyle">
+            <p style={{ fontSize: "30px" }}>
+              <item.Img_Src />
+            </p>
+            {item.Module_Name}
+          </div>
+        </div>
+      ));
 
   const slidePrev = () => {
     if (carouselRef.current) {
