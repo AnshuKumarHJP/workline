@@ -12,7 +12,8 @@ import { FaDoorClosed, FaDoorOpen } from "react-icons/fa";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { CgMenuGridR } from "react-icons/cg";
 
-import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+import { MdAdminPanelSettings } from "react-icons/md";
+
 import { IoBagHandle } from "react-icons/io5";
 import { FaFilter } from "react-icons/fa";
 import { FaClock } from "react-icons/fa6";
@@ -23,11 +24,14 @@ import { IoAirplaneSharp } from "react-icons/io5";
 import { FaCalculator } from "react-icons/fa6";
 import { FaHandshakeAngle } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
+import { FaCogs } from "react-icons/fa";
+
 import {
   getcurrentUserProfile,
   logout,
 } from "../../../Redux/features/user/Action";
 import { toast } from "react-toastify";
+import { encryptAsync } from "../../../assets/Common JS/Commonfn";
 
 const menuData = [
   {
@@ -168,6 +172,13 @@ const Navbar = () => {
     }, 1000);
   };
 
+
+
+  const handleNavigate = async (code) => {
+    const encryptedCode = await encryptAsync(code, user?.TYPEOFUSER);
+    navigate('/Config?ModeCode=' + encryptedCode);
+  };
+
   return (
     <>
       <div className="sticky-top bg-light" style={{ zIndex: "" }}>
@@ -181,12 +192,24 @@ const Navbar = () => {
             <div className="MyMenu">
               {user && (
                 <>
+                {user?.TYPEOFUSER == 'H' && 
+                  <span onClick={()=>{handleNavigate(9999)}}>
+                    <Link >
+                      <FaCogs className="Icon" />
+                    </Link>
+                  </span> }
                   <span className="">
-                    <Link to="/home">
+                    <Link to="/">
                       <AiFillHome className="Icon" />
                     </Link>
                   </span>
-                  <Link onClick={() => { window.open('home/Emp/Locator', '_blank'); }}                  >
+                  <span>
+                    <Link to="/">
+                    <MdAdminPanelSettings className="Icon"/>
+                    </Link>
+                  </span>
+
+                  <Link onClick={() => { window.open('Emp/Locator', '_blank'); }}                  >
                       <BiSearchAlt2 className="Icon" />
                   </Link>
                   <span className="dropdown ">

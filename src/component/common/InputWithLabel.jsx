@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const InputWithLabel = ({ label, type, placeholder, setvalue, getvalue,required }) => {
+const InputWithLabel = ({ label, type, placeholder, setvalue, getvalue,required,mand }) => {
   const [inputData, setInputData] = useState("");
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const InputWithLabel = ({ label, type, placeholder, setvalue, getvalue,required 
         />
         <label>
           {label}
-          <span className="text-danger">*</span>
+          {mand && <span className="text-danger"> *</span>}
         </label>
       </div>
     </>

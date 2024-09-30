@@ -5,7 +5,7 @@ const UnknownPage = () => {
   return (
     <>
     <div>UnknownPage</div>
-<Link to='/home'>BAck To Home</Link>
+<Link to='/'>BAck To Home</Link>
     </>
   )
 }

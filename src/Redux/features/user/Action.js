@@ -34,7 +34,7 @@ export const login = (userData,navigate) => async (dispatch) => {
         toast.success(userD.message)
         dispatch(loginSuccess(userD))
         setTimeout(() => {
-            navigate("/home");
+            navigate("/");
         }, 1000);
     } catch (error) {
         toast.error(error.response.data.message)

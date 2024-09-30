@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from "react";
-import "./EmpModuleDashBoard.css";
+import "./ModuleDashBoard.css";
 import { Link, useLocation, useParams } from "react-router-dom";
-import ProfileSummery from "../../../../pages/EMP/ProfileSummery";
-import Offcanvas_Comp from "../../Offcanvas_Comp";
-import Loading from "../../Loading/Loading";
-import ProfileAdd from "../../../../pages/EMP/ProfileAdd";
-import ProfileView from "../../../../pages/EMP/ProfileView";
-import MyConnects from "../../../Emp_Component/MyConnects";
-import PendingWorks from "../../../Emp_Component/PendingWorks";
-import MyTeam from "../../../Emp_Component/MyTeam";
-import { ProfileCard } from "../../../Emp_Component/ProfileCard";
+import Offcanvas_Comp from "../../component/common/Offcanvas_Comp";
+import Loading from "../../component/common/Loading/Loading";
+import ProfileAdd from "../EMP/ProfileAdd";
+import ProfileView from "../EMP/ProfileView";
+import MyConnects from "../../component/Emp_Component/MyConnects";
+import PendingWorks from "../../component/Emp_Component/PendingWorks";
+import MyTeam from "../../component/Emp_Component/MyTeam";
+import { ProfileCard } from "../../component/Emp_Component/ProfileCard";
 import { FaRegStar, FaStar } from "react-icons/fa";
-import { decryptAsync } from "../../../../assets/Common JS/Commonfn";
+import { decryptAsync } from "../../assets/Common JS/Commonfn";
 import { useSelector } from "react-redux";
-import { Sec_Menu_Group, Sec_Menu_SubGroup } from "../../../../DB/MenuSetUp";
+import { Sec_Menu_Group, Sec_Menu_SubGroup } from "../../DB/MenuSetUp";
+import WL_Comp from "../../component/common/WL_Comp/WL_Comp";
+import { MdOutlineAddBox } from "react-icons/md";
+import { FaRegEdit } from "react-icons/fa";
 
-
-const EmpModuleDashBoard = () => {
+const ModuleDashBoard = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [isAddMode, setIsAddMode] = useState(false);
   const [FavMenu, setFavMenu] = useState([
@@ -37,6 +38,7 @@ const EmpModuleDashBoard = () => {
   const { user, isLoding, error } = auth;
   const [Sec_Menu_GroupList, setSec_Menu_GroupList] = useState(null);
   const [Sec_Menu_SubGroupList, setSec_Menu_SubGroupList] = useState(null);
+  const [master, setMaster] = useState(true);
 
   useEffect(() => {
     const decryptCode = async () => {
@@ -82,7 +84,7 @@ const EmpModuleDashBoard = () => {
       <div className="top_section">
         <h3>WORKFOLIO</h3>
       </div>
-   
+
       <ul className="custom-nav-item" role="tablist">
         <li className="nav-item" role="presentation">
           <a
@@ -101,7 +103,9 @@ const EmpModuleDashBoard = () => {
         {Sec_Menu_GroupList?.map((item, index) => (
           <li className="nav-item" role="presentation" key={index}>
             <a
-              className={`custom-nav-link ${activeTab === index + 1 ? "active" : ""}`}
+              className={`custom-nav-link ${
+                activeTab === index + 1 ? "active" : ""
+              }`}
               id={`simple-tab-${index + 1}`}
               data-bs-toggle="tab"
               href={`#simple-tabpanel-${index + 1}`}
@@ -137,19 +141,17 @@ const EmpModuleDashBoard = () => {
               </div>
             </div>
           </div>
-          
         </div>
         {Sec_Menu_GroupList?.map((item, index) => (
           <div
-            key={index+1}
-            className={`tab-pane ${activeTab === index+1 ? "active" : ""}`}
-            id={`simple-tabpanel-${index+1}`}
+            key={index + 1}
+            className={`tab-pane ${activeTab === index + 1 ? "active" : ""}`}
+            id={`simple-tabpanel-${index + 1}`}
             role="tabpanel"
-            aria-labelledby={`simple-tab-${index+1}`}
+            aria-labelledby={`simple-tab-${index + 1}`}
           >
-            {item.Group_Code}
             {Sec_Menu_SubGroupList?.map((item, index) => (
-              <div className="box" key={index}>
+              <WL_Comp.WL_Div key={index}>
                 <div className="box-header with-border">
                   <h3 className="box-title">{item.SubGroupName}</h3>
                 </div>
@@ -159,23 +161,34 @@ const EmpModuleDashBoard = () => {
                       {[1, 1, 1, 1, 1, 1, 1, 1].map((item, index) => (
                         <div className="col-md-6" key={index}>
                           <div className="detail-functions">
-                            <a href="">Review Process</a>
-                            <span>
-                              {FavMenu[index] ? (
-                                <FaStar onClick={() => toggleFavorite(index)} />
-                              ) : (
-                                <FaRegStar
-                                  onClick={() => toggleFavorite(index)}
-                                />
-                              )}
-                            </span>
+                            <a>Add Sec_Modules</a>
+
+                            {master ? (
+                              <span cl>
+                               <Link to='/Sec_Modules?mode=add' style={{color:'#444'}}> <MdOutlineAddBox size={18} /></Link>
+                                &nbsp;&nbsp;|&nbsp;&nbsp;
+                                <Link to='/Sec_Modules?mode=list' style={{color:'#444'}}>  <FaRegEdit size={17} /></Link>
+                              </span>
+                            ) : (
+                              <span>
+                                {FavMenu[index] ? (
+                                  <FaStar
+                                    onClick={() => toggleFavorite(index)}
+                                  />
+                                ) : (
+                                  <FaRegStar
+                                    onClick={() => toggleFavorite(index)}
+                                  />
+                                )}
+                              </span>
+                            )}
                           </div>
                         </div>
                       ))}
                     </div>
                   </div>
                 </div>
-              </div>
+              </WL_Comp.WL_Div>
             ))}
           </div>
         ))}
@@ -188,4 +201,4 @@ const EmpModuleDashBoard = () => {
   );
 };
 
-export default EmpModuleDashBoard;
+export default ModuleDashBoard;

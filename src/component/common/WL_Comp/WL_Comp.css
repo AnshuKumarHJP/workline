@@ -1,0 +1,12 @@
+
+
+#WL_Div{
+        position: relative;
+        background: #ffffff;
+        margin-bottom: 20px;
+        width: 100%;
+        /* border-top: 2px solid #052c65; */
+        box-shadow: 0 1px 5px 0.05px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        padding: 15px !important;
+}

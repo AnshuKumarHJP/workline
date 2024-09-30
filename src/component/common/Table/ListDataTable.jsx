@@ -2,8 +2,15 @@ import React, { useEffect } from "react";
 import "./ListDataTable.css";
 import { HiPlus } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import WL_Comp from "../WL_Comp/WL_Comp";
 
-const ListDataTable = ({ data, columnData, Navigate, baseURL }) => {
+const ListDataTable = ({
+  data,
+  columnData,
+  Navigate,
+  baseURL,
+  getClickedData,
+}) => {
   useEffect(() => {
     const initializeDataTable = () => {
       const $ = window.$;
@@ -22,7 +29,7 @@ const ListDataTable = ({ data, columnData, Navigate, baseURL }) => {
   }, []);
 
   // Map through the data and match with columnData array
-  const mappedData = data.map((item) => {
+  const mappedData = data?.map((item) => {
     let result = {};
     columnData.forEach((col) => {
       if (col.rowData in item) {
@@ -37,48 +44,58 @@ const ListDataTable = ({ data, columnData, Navigate, baseURL }) => {
 
   return (
     <>
-    <div className="card p-4">
-      <table
-        id="example"
-        className="table table-hover dt-responsive"
-        cellSpacing="0"
-        width="100%"
-      >
-        <thead className="table_thead">
-          <tr className="tr_row">
-            {Navigate == "true" && (
-              <th>
-                <HiPlus />
-              </th>
-            )}
-            {columnData &&
-              columnData.map((header, index) => (
-                <th key={index}>{header.title}</th>
-              ))}
-          </tr>
-        </thead>
-        <tbody className="table_tbody ">
-          {data &&
-            mappedData.map((row, rowIndex) => (
-              <tr key={rowIndex} className="tr_row">
-                {/* Render link with Icon */}
-                {Navigate == "true" && (
-                  <td>
-                    <Link to={`${baseURL}${row._id}`}>
-                      <HiPlus />
-                    </Link>
-                  </td>
-                )}
+      <WL_Comp.WL_Div Bordercolor="#052c65">
+        <table
+          id="example"
+          className="table table-hover dt-responsive"
+          cellSpacing="0"
+          width="100%"
+        >
+          <thead className="table_thead">
+            <tr className="tr_row">
+              {Navigate == "true" ? (
+                <th>
+                  <HiPlus />
+                </th>
+              ) : (
+                <th>
+                  <HiPlus />
+                </th>
+              )}
+              {columnData &&
+                columnData.map((header, index) => (
+                  <th key={index}>{header.title}</th>
+                ))}
+            </tr>
+          </thead>
+          <tbody className="table_tbody ">
+            {data &&
+              mappedData.map((row, rowIndex) => (
+                <tr key={rowIndex} className="tr_row">
+                  {/* Render link with Icon */}
+                  {Navigate == "true" ? (
+                    <td>
+                      <Link to={`${baseURL}${row._id}`}>
+                        <HiPlus />
+                      </Link>
+                    </td>
+                  ) : (
+                    <td>
+                      <Link>
+                        <HiPlus />
+                      </Link>
+                    </td>
+                  )}
 
-                {columnData &&
-                  columnData.map((col, colIndex) => (
-                    <td key={colIndex}>{row[col.title]}</td>
-                  ))}
-              </tr>
-            ))}
-        </tbody>
-      </table>
-      </div>
+                  {columnData &&
+                    columnData.map((col, colIndex) => (
+                      <td key={colIndex}>{row[col.title]}</td>
+                    ))}
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </WL_Comp.WL_Div>
     </>
   );
 };

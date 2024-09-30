@@ -7,11 +7,11 @@ import { GiTransportationRings } from 'react-icons/gi';
 export const Sec_Modules = [
     { Module_Code: 3, Module_Name: "Performance & Goals", Typeofuser: "H", Display: 1, Display_Order: 6, Img_Src: FaChartLine ,path:"/"},
     { Module_Code: 999, Module_Name: "Workline Setup", Typeofuser: "H", Display: 1, Display_Order: 13, Img_Src: MdBusiness ,path:"/"},
-    { Module_Code: 15, Module_Name: "Workforce Management", Typeofuser: "H", Display: 1, Display_Order: 1, Img_Src: FaUsers ,path:"wfm?ModeCode="},
+    { Module_Code: 15, Module_Name: "Workforce Management", Typeofuser: "H", Display: 1, Display_Order: 1, Img_Src: FaUsers ,path:"/WFM?ModeCode="},
     { Module_Code: 338, Module_Name: "RECRUITMENT", Typeofuser: "S", Display: 1, Display_Order: 2, Img_Src: FaClipboardCheck ,path:"/"},
     { Module_Code: 436, Module_Name: "Business Process", Typeofuser: "H", Display: 1, Display_Order: 509, Img_Src: FaCog ,path:"/"},
-    { Module_Code: 14, Module_Name: "Talent Acquisition", Typeofuser: "H", Display: 1, Display_Order: 2, Img_Src: FaRegHandshake ,path:"/"},
-    { Module_Code: 20, Module_Name: "Enterprise Config Studio", Typeofuser: "H", Display: 1, Display_Order: 1, Img_Src: MdBusiness ,path:"/"},
+    { Module_Code: 14, Module_Name: "Talent Acquisition", Typeofuser: "H", Display: 1, Display_Order: 2, Img_Src: FaRegHandshake ,path:"/TA?ModeCode="},
+    { Module_Code: 20, Module_Name: "Enterprise Config Studio", Typeofuser: "H", Display: 1, Display_Order: 1, Img_Src: MdBusiness ,path:"/ECS?ModeCode="},
     { Module_Code: 332, Module_Name: "RECRUITMENT", Typeofuser: 5, Display: 1, Display_Order: 2, Img_Src: FaClipboardCheck ,path:"/"},
     { Module_Code: 148, Module_Name: "RECRUITMENT", Typeofuser: 4, Display: 1, Display_Order: 2, Img_Src: FaClipboardCheck ,path:"/"},
     { Module_Code: 60, Module_Name: "Learning & Development", Typeofuser: "E", Display: 1, Display_Order: 7, Img_Src: GiTransportationRings ,path:"/"},
@@ -130,6 +130,11 @@ export const Sec_Menu_Group = [
     { Group_Code: 798, Module_Code: 20, Group_Name: 'Employee Profile', Display_Order: 1, Group_Icon: FaUserTie},
     { Group_Code: 799, Module_Code: 20, Group_Name: 'Asset Management', Display_Order: 160, Group_Icon: FaUserTie},
     { Group_Code: 800, Module_Code: 20, Group_Name: 'Skill Development', Display_Order: 160, Group_Icon: FaUserTie  },
+    { Group_Code: 801, Module_Code: 9999, Group_Name: 'Config Studio', Display_Order: 160, Group_Icon: FaUserTie  },
+    { Group_Code: 802, Module_Code: 9999, Group_Name: 'Workflow Config', Display_Order: 160, Group_Icon: FaUserTie  },
+    { Group_Code: 803, Module_Code: 9999, Group_Name: 'Form Config', Display_Order: 160, Group_Icon: FaUserTie  },
+    { Group_Code: 804, Module_Code: 9999, Group_Name: 'DB Version Control', Display_Order: 160, Group_Icon: FaUserTie  },
+    { Group_Code: 805, Module_Code: 9999, Group_Name: 'Security Config Studi', Display_Order: 160, Group_Icon: FaUserTie  },
   ];
   
 
@@ -633,6 +638,7 @@ export const Sec_Menu_SubGroup = [
     { SubGroupCode: 894, SubGroupName: "My Contract Letter", DisplayOrder: 6, GroupCode: 701 },
     { SubGroupCode: 895, SubGroupName: "Score Moderation", DisplayOrder: 8, GroupCode: 5 },
     { SubGroupCode: 896, SubGroupName: "Score Moderation", DisplayOrder: 7, GroupCode: 718 },
-    { SubGroupCode: 897, SubGroupName: "Vendor", DisplayOrder: 2, GroupCode: 713 }
+    { SubGroupCode: 897, SubGroupName: "Vendor", DisplayOrder: 2, GroupCode: 713 },
+    { SubGroupCode: 897, SubGroupName: "Menu Configration", DisplayOrder: 2, GroupCode: 801 }
   ];
   

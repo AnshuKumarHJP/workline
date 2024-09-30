@@ -8,6 +8,7 @@ const DropdownWithLabel = ({
   Get_selectedData,
   valueName,
   valueLabel,
+  mand
 }) => {
   const [dropdownData, setDropdownData] = useState(null);
   const [selectedValue, setSelectedValue] = useState("");
@@ -62,7 +63,7 @@ const DropdownWithLabel = ({
         </select>
         <label htmlFor="floatingSelect">
           {label}
-          <span className="text-danger"> *</span>
+          {mand &&  <span className="text-danger"> *</span>}
         </label>
       </div>
     </>

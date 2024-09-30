@@ -11,6 +11,7 @@ import { login } from "../../../Redux/features/user/Action";
 import { toast, ToastContainer } from "react-toastify";
 import MainLayout from "../MainLayout";
 import { getCookie } from "../../../assets/Common JS/Commonfn";
+import Navbar from "../Header/Navbar";
 
 
 
@@ -47,8 +48,9 @@ const Login = () => {
 
   return (
     <>
-    {/* <ToastContainer/> */}
-      <MainLayout>
+    <ToastContainer/>
+      {/* <MainLayout> */}
+      <Navbar/>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-6 d-none d-md-block">
@@ -115,7 +117,7 @@ const Login = () => {
             </div>
           </div>
         </div>
-      </MainLayout>
+      {/* </MainLayout> */}
     </>
   );
 };

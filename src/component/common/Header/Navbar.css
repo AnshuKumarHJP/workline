@@ -10,8 +10,8 @@
  }
  .Icon {
      color: #334667;
-     font-size: 45px;
-     padding: 10px;
+     font-size: 35px;
+     padding: 5px;
  }
 .btn_toggless{
     color: #334667;
@@ -21,7 +21,7 @@
      /* font-size: 2rem; */
      align-items: center !important;
      display: flex;
-     gap: 15px;
+     gap: 12px;
  }
 
  .myLogo img {
